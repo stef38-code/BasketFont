@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "server": "json-server --watch ./server/database.json --routes ./server/routes.json --no-cors=true --port 8080"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +31,7 @@
     "chart.js": "2.9.4",
     "core-js": "3.6.4",
     "file-saver": "^2.0.2",
+    "json-server": "^0.17.0",
     "ngrx-store-logger": "0.2.2",
     "ngx-loading": "1.0.14",
     "primeicons": "4.0.0",

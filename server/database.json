@@ -1,0 +1,84 @@
+{
+  "joueurs": [
+    {
+      "id": 1,
+      "nom": "BONGARD",
+      "prenom": "Nolan"
+    },
+    {
+      "id": 2,
+      "nom": "CARUANO",
+      "prenom": "Eliott"
+    },
+    {
+      "id": 2,
+      "nom": "ELMI BARREH",
+      "prenom": "Dougsiyeh"
+    },
+    {
+      "id": 4,
+      "nom": "LAFOND",
+      "prenom": "Loevan"
+    },
+    {
+      "id": 5,
+      "nom": "ALOUI",
+      "prenom": "Zakarie"
+    },
+    {
+      "id": 6,
+      "nom": "MARTINS",
+      "prenom": "Simon"
+    },
+    {
+      "id": 7,
+      "nom": "NOUR",
+      "prenom": "Gebril"
+    },
+    {
+      "id": 8,
+      "nom": "TERMOZ-BAJAT",
+      "prenom": "Enzo"
+    },
+    {
+      "id": 9,
+      "nom": "Lahmer",
+      "prenom": "Souhaib"
+    },
+    {
+      "id": 10,
+      "nom": "FURLANO",
+      "prenom": "Timeo"
+    },
+    {
+      "id": 11,
+      "nom": "CHAMPLOVIER",
+      "prenom": "Axel"
+    },
+    {
+      "id": 12,
+      "nom": "BEN SALEM",
+      "prenom": "Amine"
+    },
+    {
+      "id": 13,
+      "nom": "MATHLOUTHI",
+      "prenom": "Wesseme"
+    },
+    {
+      "id": 14,
+      "nom": "COTTANT",
+      "prenom": "Adrien"
+    },
+    {
+      "id": 15,
+      "nom": "ALLOUTI",
+      "prenom": "yanis"
+    },
+    {
+      "id": 16,
+      "nom": "BOUNON",
+      "prenom": "Arthur"
+    }
+  ]
+}
