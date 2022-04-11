@@ -10,15 +10,15 @@ export const getIsLoading = (state: State): boolean => state.isLoading;
 export const selectJoueursState: MemoizedSelector<object,
   State> = createFeatureSelector<State>('joueurs');
 
-export const selectAllJoueursItems: (
+export const selectAll: (
   state: object
 ) => Joueur[] = featureAdapter.getSelectors(selectJoueursState).selectAll;
 
-export const selectJoueursById = (id: number) => {
+export const selectById = (id: number) => {
   // @ts-ignore
-  return createSelector(this.selectAllJoueursItems, (allMyFeatures: Joueur[]) => {
-    if (allMyFeatures) {
-      return allMyFeatures.find(p => p.id === id);
+  return createSelector(this.selectAll, (all: Joueur[]) => {
+    if (all) {
+      return all.find(p => p.id === id);
     } else {
       return null;
     }

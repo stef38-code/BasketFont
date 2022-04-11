@@ -5,7 +5,7 @@ import {Joueur} from '../../dto';
 export const featureAdapter: EntityAdapter<Joueur> = createEntityAdapter<Joueur>({
   selectId: model => model.id,
   sortComparer: (a: Joueur, b: Joueur): number =>
-    b.id.toLocaleString().localeCompare(a.id.toLocaleString())
+    a.id > b.id ? 1 : -1
 });
 
 export interface State extends EntityState<Joueur> {
