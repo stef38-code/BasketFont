@@ -1,4 +1,9 @@
-.p-datatable tbody tr {
-  color: #e51616;
-  background-color: #205b88;
+.p-datatable .p-sortable-column.p-highlight {
+  background: #342d2d;
+  color: #bd0b26;
 }
+
+.ui-p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
+  color: #bd0b26;
+}
+

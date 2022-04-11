@@ -6,13 +6,12 @@
          [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
          [paginator]="true" currentPageReportTemplate="Affichage de ligne {first} à la {last} lignes sur {totalRecords}"
          [filterDelay]="0" [globalFilterFields]="['id','nom','prenom']"
-
          [autoLayout]="true" [resizableColumns]="true"
 >
   <ng-template pTemplate="caption">
     <div class="p-d-flex">
 			<span class="p-input-icon-left p-ml-auto">
-                <i class="pi pi-search"></i>
+                <i class="pi pi-filter-slash"></i>
                 <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText
                        placeholder="Search keyword" type="text"/>
             </span>
@@ -25,17 +24,6 @@
                            placeholder="Rechercher" size="50" style="width:auto" type="text"/>
                 </span>
     </div>
-    <!--<div class="table-header">
-
-      <div style="text-align: right">
-        <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
-      <span class="p-input-icon-right">
-                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
-                               placeholder="Rechercher" style="width:auto" size="50"/>
-                    </span>
-      </div>
-
-    </div>-->
   </ng-template>
   <ng-template pTemplate="header" let-columns>
     <tr>

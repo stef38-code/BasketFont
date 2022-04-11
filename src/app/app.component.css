@@ -10,3 +10,17 @@
   background-color: var(--primary-color);
   color: var(--text-color);
 }
+
+data-table p-table .ui-table .ui-table-tbody > tr.ui-state-highlight {
+  background-color: #007ad9;
+  color: #ffffff;
+}
+
+p-datatable p-datatable-header {
+  background: #dc0606 !important;
+  color: rgba(213, 26, 26, 0.6);
+  border: solid #c0ba68;
+  border-width: 1px 0 0 0;
+  padding: 1rem 1rem;
+  font-weight: 600;
+}
