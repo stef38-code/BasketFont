@@ -58,4 +58,11 @@ export class JoueurListeComponent implements OnInit {
     );
   }
 
+  selectProduct(userElement: any): void {
+    console.log(userElement);
+  }
+
+  clear(table: Table): void {
+    table.clear();
+  }
 }

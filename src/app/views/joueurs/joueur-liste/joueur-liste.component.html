@@ -1,3 +1,4 @@
+<h5>Liste des joueurs</h5>
 <p-table #dt [columns]="cols" [value]="joueurs"
          sortMode="multiple"
          dataKey="id"
@@ -5,24 +6,44 @@
          [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
          [paginator]="true" currentPageReportTemplate="Affichage de ligne {first} à la {last} lignes sur {totalRecords}"
          [filterDelay]="0" [globalFilterFields]="['id','nom','prenom']"
+
+         [autoLayout]="true" [resizableColumns]="true"
 >
   <ng-template pTemplate="caption">
-    <div class="table-header">
-      List of Customers
-      <div style="text-align: left">
-      <span class="p-input-icon-left">
+    <div class="p-d-flex">
+			<span class="p-input-icon-left p-ml-auto">
+                <i class="pi pi-search"></i>
+                <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText
+                       placeholder="Search keyword" type="text"/>
+            </span>
+    </div>
+    <div class="flex">
+      <button (click)="clear(dt)" class="p-button-outlined" icon="pi pi-filter-slash" label="Clear" pButton></button>
+      <span class="p-input-icon-left ml-auto">
+                    <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+                    <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText
+                           placeholder="Rechercher" size="50" style="width:auto" type="text"/>
+                </span>
+    </div>
+    <!--<div class="table-header">
+
+      <div style="text-align: right">
+        <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+      <span class="p-input-icon-right">
                         <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
-                               placeholder="Global Search" style="width:auto"/>
+                               placeholder="Rechercher" style="width:auto" size="50"/>
                     </span>
       </div>
-    </div>
+
+    </div>-->
   </ng-template>
   <ng-template pTemplate="header" let-columns>
     <tr>
-      <th *ngFor="let col of columns">
+      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
         {{col.header}}
         <p-sortIcon [field]="col.field"></p-sortIcon>
       </th>
+      <th style="width:4rem"></th>
     </tr>
     <tr>
       <th *ngFor="let col of columns" [ngSwitch]="col.field">
@@ -31,9 +52,12 @@
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-user let-columns="columns">
-    <tr >
-      <td *ngFor="let col of columns"  pSortableColumn="col.field">
+    <tr>
+      <td *ngFor="let col of columns">
         {{user[col.field]}}
+      </td>
+      <td>
+        <button (click)="selectProduct(user)" icon="pi pi-search" pButton pRipple type="button"></button>
       </td>
     </tr>
   </ng-template>
@@ -44,7 +68,7 @@
   </ng-template>
 </p-table>
 <!--
--->
+
 <p-table #dt [columns]="cols" [value]="joueurs" [(selection)]="selectedCustomers" dataKey="id" styleClass="p-datatable-customers"
          [rowHover]="true"
          [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
@@ -59,22 +83,16 @@
                     </span>
     </div>
   </ng-template>
-  <ng-template pTemplate="header">
-<!--    <tr>
-      <th pSortableColumn="id">id
-        <p-sortIcon field="id"></p-sortIcon>
-      </th>
-      <th pSortableColumn="nom">nom
-        <p-sortIcon field="nom"></p-sortIcon>
-      </th>
-      <th pSortableColumn="prenom">Representative
-        <p-sortIcon field="prenom"></p-sortIcon>
-      </th>
-    </tr>-->
+  <ng-template pTemplate="header" let-columns>
     <tr>
-      <th *ngFor="let col of columns" pSortableColumn="col.field">
+      <th *ngFor="let col of columns">
         {{col.header}}
         <p-sortIcon [field]="col.field"></p-sortIcon>
+      </th>
+    </tr>
+    <tr>
+      <th *ngFor="let col of columns" [ngSwitch]="col.field">
+        <input pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
       </th>
     </tr>
   </ng-template>
@@ -97,4 +115,4 @@
     </tr>
   </ng-template>
 </p-table>
-
+-->

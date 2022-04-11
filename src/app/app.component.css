@@ -4,6 +4,9 @@
   flex: 1 1 100%;
 }
 
-.content {
-  background: #71FA4C;
+.topbar {
+  display: flex;
+  height: 55px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
