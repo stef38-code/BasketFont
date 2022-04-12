@@ -11,9 +11,9 @@ import {CoreModule} from './core/core.module';
 import {HttpClientModule} from '@angular/common/http';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment.prod';
-import {ButtonModule} from "primeng/button";
-import {PanelModule} from "primeng/panel";
-
+import {ButtonModule} from 'primeng/button';
+import {PanelModule} from 'primeng/panel';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import {PanelModule} from "primeng/panel";
     BrowserAnimationsModule,
     ButtonModule,
     PanelModule,
+    NgbModule,
     StoreDevtoolsModule.instrument({
       maxAge: 12, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

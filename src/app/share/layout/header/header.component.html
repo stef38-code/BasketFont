@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="space-between center">
+<!--<div fxLayout="row" fxLayoutAlign="space-between center">
   <div class="topbar" fxLayout="row" fxLayoutGap="20px">
     <a routerLink="/dashboard">Acceuil</a>
     <a routerLink="/joueurs">Joueurs</a>
@@ -6,4 +6,72 @@
     <a routerLink="/matchs">Matchs</a>
     <a routerLink="/account-settings">Account Settings</a>
   </div>
+</div>-->
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="Angular">
+    Basket Ball
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" pl-lg-25>
+        <a routerLink="/dashboard">Acceuil</a>
+      </li>
+      <li class="nav-item" pl-lg-3>
+        <a routerLink="/joueurs">Joueurs</a>
+      </li>
+      <li class="nav-item" pl-lg-3>
+        <a routerLink="/equipes">Equipes</a>
+      </li>
+      <li class="nav-item" pl-lg-3>
+        <a routerLink="/matchs">Matchs</a>
+      </li>
+     &lt;!&ndash; <li class="nav-item pl-lg-3">
+        <button *ngIf="!isAuthenticated" (click)="oktaAuth.loginRedirect()" class="btn btn-outline-primary">Login</button>
+        <button *ngIf="isAuthenticated" (click)="oktaAuth.logout()" class="btn btn-outline-secondary">Logout</button>
+      </li>&ndash;&gt;
+    </ul>
+  </div>
+</nav>-->
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    Brand
+  </a>
+
+  <button class="navbar-toggler" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Item 1</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Item 2</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar-->
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h4 class="text-white">Collapsed content</h4>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler" data-target="#navbarToggleExternalContent" data-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
 </div>

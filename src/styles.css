@@ -6,15 +6,21 @@
 @import "../node_modules/quill/dist/quill.snow.css";
 */
 
+/*@import "../node_modules/bootstrap/scss/bootstrap.scss";*/
 body {
   display: flex;
   flex-direction: column;
+  height: 90vh;
+  width: 100vw;
+  /* padding: 1px 30px 1px 30px;
+   color: var(--text-color);
+   background-color:silver ;*/
 }
 
 body, html {
   padding: 0.5em;
   margin: 0;
-  height: 100%;
+
   font-family: var(--font-family);
   /*  background-color: var(--surface-c);
     color: var(--text-color);*/

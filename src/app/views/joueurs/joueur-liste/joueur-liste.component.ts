@@ -64,5 +64,6 @@ export class JoueurListeComponent implements OnInit {
 
   clear(table: Table): void {
     table.clear();
+
   }
 }
