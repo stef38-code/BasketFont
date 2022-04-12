@@ -10,7 +10,7 @@ import {Table} from 'primeng/table';
 @Component({
   selector: 'app-joueur-liste',
   templateUrl: './joueur-liste.component.html',
-  styleUrls: ['./joueur-liste.component.css']
+  styleUrls: ['./joueur-liste.component.scss']
 })
 export class JoueurListeComponent implements OnInit {
 
