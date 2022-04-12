@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 import {ShareModule} from './share/share.module';
@@ -14,6 +14,9 @@ import {environment} from '../environments/environment.prod';
 import {ButtonModule} from 'primeng/button';
 import {PanelModule} from 'primeng/panel';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MaterialModule} from './app-material.module';
+
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     ButtonModule,
     PanelModule,
+    MaterialModule,
     NgbModule,
     StoreDevtoolsModule.instrument({
       maxAge: 12, // Retains last 25 states
@@ -38,7 +42,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {
 }
