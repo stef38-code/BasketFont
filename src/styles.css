@@ -1,17 +1,23 @@
-
-/*@import "../node_modules/bootstrap/dist/css/bootstrap.css";
-@import "../node_modules/primeng/resources/primeng.min.css";
-@import "../node_modules/primeflex/primeflex.css";
-@import "../node_modules/primeicons/primeicons.css";
-@import "../node_modules/quill/dist/quill.snow.css";*/
-/*@import "~bootstrap/dist/css/bootstrap.css";
-@import "~bootstrap/dist/css/bootstrap.css";*/
+@import "~bootstrap/dist/css/bootstrap.css";
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import "../node_modules/primeicons/primeicons.css";
+@import '~primeng/resources/themes/saga-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~primeicons/primeicons.css';
+@import '~primeflex/primeflex.css';
+@import '~quill/dist/quill.snow.css';
+
 .mat-toolbar{
   background-color: #2C97BD ;
 }
-
+.mat-nav-list{
+  background-color: #2C97BD ;
+}
+.mat-list-base .mat-list-item {
+  color: #f0f1f3;
+}
+.mat-toolbar-row a{
+  color: #f0f1f3;
+}
 /**
 Custom icon
  */
@@ -24,11 +30,15 @@ Custom icon
   color: #D34E4E ;
   margin-right: 0.3em;
 }
-.mat-nav-list{
-  background-color: #2C97BD ;
+.pi-user-custom:before {
+  content: "\e939";
+  color: #D34E4E ;
+  margin-right: 0.3em;
 }
-.mat-toolbar-row a{
-  color: #384b5e ;
+personnal-icon-basket{
+  content: "\ea26";
+  color: #D34E4E ;
+  margin-right: 0.3em;
 }
 :root {
   --primary: #f28250;

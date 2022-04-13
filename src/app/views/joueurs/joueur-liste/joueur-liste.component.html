@@ -10,13 +10,11 @@
 >
   <ng-template pTemplate="caption">
     <div class="p-d-flex">
-      <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
-      <i class="pi pi-trash" style="margin:4px 4px 0 0"></i>
-      <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText
+      <input (input)="find(dt,$event)" pInputText
              placeholder="Rechercher" size="50" style="width:auto" type="text"/>
-      <button (click)="clear(dt)" class="p-button-outlined" icon="pi pi-trash" label="Clear" pButton></button>
-      <button (click)="clear(dt)
-      " class="p-button-outlined" icon="pi pi-trash" label="Clear Filters" pButton></button>
+      <button mat-icon-button (click)="clear(dt)" fxShow="true" fxHide.gt-sm>
+        <mat-icon><i class="pi pi-trash" ></i></mat-icon>
+      </button>
     </div>
   </ng-template>
   <ng-template pTemplate="header" let-columns>
@@ -39,7 +37,9 @@
         {{user[col.field]}}
       </td>
       <td>
-        <button (click)="selectProduct(user)" icon="pi pi-search" pButton pRipple type="button"></button>
+        <button mat-icon-button (click)="selectProduct(user)" fxShow="true" fxHide.gt-sm>
+          <mat-icon><i class="pi pi-folder-open" ></i></mat-icon>
+        </button>
       </td>
     </tr>
   </ng-template>

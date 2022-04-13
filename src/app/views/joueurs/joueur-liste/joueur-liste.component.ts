@@ -10,7 +10,7 @@ import {Table} from 'primeng/table';
 @Component({
   selector: 'app-joueur-liste',
   templateUrl: './joueur-liste.component.html',
-  styleUrls: ['./joueur-liste.component.scss']
+  styleUrls: ['./joueur-liste.component.css']
 })
 export class JoueurListeComponent implements OnInit {
 
@@ -50,7 +50,6 @@ export class JoueurListeComponent implements OnInit {
     );
     this.myFeatureItems$.subscribe(values => {
       this.joueurs = values;
-      console.log('LOADING JOUEURS......', this.joueurs.length);
     });
     this.isLoading$.subscribe(loading => this.loading = loading);
     this.store$.dispatch(
@@ -65,5 +64,9 @@ export class JoueurListeComponent implements OnInit {
   clear(table: Table): void {
     table.clear();
 
+  }
+
+  find(dt: Table, $event: Event): void {
+    dt.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
   }
 }
