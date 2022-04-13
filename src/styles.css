@@ -7,48 +7,38 @@
 /*@import "~bootstrap/dist/css/bootstrap.css";
 @import "~bootstrap/dist/css/bootstrap.css";*/
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-body {
-  display: flex;
-  flex-direction: column;
-  height: 90vh;
-  width: 100vw;
-  /* padding: 1px 30px 1px 30px;
-   color: var(--text-color);
-   background-color:silver ;*/
+@import "../node_modules/primeicons/primeicons.css";
+.mat-toolbar{
+  background-color: #2C97BD ;
 }
 
-body, html {
-  padding: 0.5em;
-  margin: 0;
-
-  font-family: var(--font-family);
-  /*  background-color: var(--surface-c);
-    color: var(--text-color);*/
+/**
+Custom icon
+ */
+.pi-list-custom:before {
+  content: "\e967";
+  color: #D34E4E ;
 }
-.valign-center {
-  display: inline-flex;
-  vertical-align: middle;
-  align-items: center;
+.pi-users-custom:before {
+  content: "\e941";
+  color: #D34E4E ;
+  margin-right: 0.3em;
 }
-
-a {
-  text-decoration: none;
-  color: white;
+.mat-nav-list{
+  background-color: #2C97BD ;
 }
-
-a:hover, a:active {
-  color: lightgray;
+.mat-toolbar-row a{
+  color: #384b5e ;
 }
-
-.menu-items {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-mat-toolbar {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0px;
-  z-index: 999;
+:root {
+  --primary: #f28250;
+  --secondary: #2C97BD;
+  --accent: #384b5e;
+  --warn: #D34E4E;
+  --margin-button-icon: 0 0.3em;
+  --grid-default-gap: 2em;
+  /*header*/
+  --header-height: 60px;
+  /* Footer */
+  --footer-height: 40px;
 }

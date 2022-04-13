@@ -1,12 +1,9 @@
-:host {
+/*:host {
   display: flex;
   flex-direction: column;
   flex: 1 1 100%;
-}
-
-.topbar {
-  display: flex;
-  background-color: var(--primary-color);
-  color: var(--text-color);
+}*/
+.menu-spacer {
+  flex: 1 1 auto;
 }
 

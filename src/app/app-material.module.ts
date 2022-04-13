@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { A11yModule } from '@angular/cdk/a11y';
 import { BidiModule } from '@angular/cdk/bidi';
@@ -76,5 +76,6 @@ const MATERIAL_MODULES = [
   imports: MATERIAL_MODULES,
   declarations: [],
   exports: MATERIAL_MODULES,
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
 })
 export class MaterialModule { }
