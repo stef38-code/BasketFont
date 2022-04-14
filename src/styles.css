@@ -23,25 +23,39 @@ Custom icon
  */
 .pi-list-custom:before {
   content: "\e967";
-  color: #D34E4E ;
+  color: var(--primary-icon);
 }
+
+.pi-trash-custom:before {
+  content: "\e93d";
+  color: var(--primary-icon);
+}
+
 .pi-users-custom:before {
   content: "\e941";
-  color: #D34E4E ;
+  color: var(--primary-icon);
   margin-right: 0.3em;
 }
 .pi-user-custom:before {
   content: "\e939";
-  color: #D34E4E ;
+  color: var(--primary-icon);
   margin-right: 0.3em;
 }
-personnal-icon-basket{
+
+personnal-icon-basket {
   content: "\ea26";
-  color: #D34E4E ;
+  color: var(--primary-icon);
   margin-right: 0.3em;
 }
+
+.pi-folder-open-custom:before {
+  content: "\e964";
+  color: var(--primary-icon);
+  margin-right: 0.3em;
+}
+
 :root {
-  --primary: #f28250;
+  --primary-icon: #D34E4E;
   --secondary: #2C97BD;
   --accent: #384b5e;
   --warn: #D34E4E;
@@ -50,5 +64,5 @@ personnal-icon-basket{
   /*header*/
   --header-height: 60px;
   /* Footer */
-  --footer-height: 40px;
+  --footer-height: 20px;
 }

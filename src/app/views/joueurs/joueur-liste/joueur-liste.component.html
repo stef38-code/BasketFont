@@ -7,13 +7,14 @@
          [paginator]="true" currentPageReportTemplate="Affichage de ligne {first} à la {last} lignes sur {totalRecords}"
          [filterDelay]="0" [globalFilterFields]="['id','nom','prenom']"
          [autoLayout]="true" [resizableColumns]="true"
+
 >
   <ng-template pTemplate="caption">
     <div class="p-d-flex">
       <input (input)="find(dt,$event)" pInputText
              placeholder="Rechercher" size="50" style="width:auto" type="text"/>
       <button mat-icon-button (click)="clear(dt)" fxShow="true" fxHide.gt-sm>
-        <mat-icon><i class="pi pi-trash" ></i></mat-icon>
+        <mat-icon><i class="pi pi-trash-custom"></i></mat-icon>
       </button>
     </div>
   </ng-template>
@@ -27,8 +28,10 @@
     </tr>
     <tr>
       <th *ngFor="let col of columns" [ngSwitch]="col.field">
-        <input pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+        <input (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)" pInputText
+               styleClass="p-column-filter" type="text">
       </th>
+      <th></th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-user let-columns="columns">
@@ -38,7 +41,7 @@
       </td>
       <td>
         <button mat-icon-button (click)="selectProduct(user)" fxShow="true" fxHide.gt-sm>
-          <mat-icon><i class="pi pi-folder-open" ></i></mat-icon>
+          <mat-icon><i class="pi pi-folder-open-custom"></i></mat-icon>
         </button>
       </td>
     </tr>
