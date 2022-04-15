@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {DynamicDialogConfig} from 'primeng/dynamicdialog';
+import {Joueur} from '../../../share/dto';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-joueur-edit',
@@ -6,8 +9,19 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./joueur-edit.component.css']
 })
 export class JoueurEditComponent implements OnInit {
+  public personForm: FormGroup;
+  joueur: Joueur;
 
-  constructor() {
+  constructor(public config: DynamicDialogConfig, private fb: FormBuilder) {
+    this.joueur = this.config.data.userElement;
+    this.personForm = this.fb.group({
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      street: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required]
+    });
+
   }
 
   ngOnInit(): void {

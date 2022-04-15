@@ -5,6 +5,8 @@ import {JoueursRoutingModule} from './joueurs-routing.module';
 import {TableModule} from 'primeng/table';
 import {MaterialModule} from '../../app-material.module';
 import {JoueurEditComponent} from './joueur-edit/joueur-edit.component';
+import {PanelModule} from "primeng/panel";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -13,7 +15,10 @@ import {JoueurEditComponent} from './joueur-edit/joueur-edit.component';
     CommonModule,
     JoueursRoutingModule,
     TableModule,
-    MaterialModule
+    MaterialModule,
+    PanelModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class JoueursModule { }

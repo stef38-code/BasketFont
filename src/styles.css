@@ -12,10 +12,10 @@ Personnal style
 @import './assets/style/root-style.css';
 
 .mat-toolbar{
-  background-color: #2C97BD ;
+  background-color: var(--bandeau-primary);
 }
-.mat-nav-list{
-  background-color: #2C97BD ;
+.mat-nav-list {
+  background-color: var(--bandeau-primary);
 }
 
 .mat-list-base .mat-list-item {
@@ -27,16 +27,83 @@ Personnal style
 }
 
 /*
+Dialogue
+ */
+.p-dialog .p-dialog-header {
+  border-bottom: 0 none;
+  background: var(--bandeau-primary);
+  color: var(--bandeau-text-second);
+  padding: 1.5rem;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  height: 25px;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary-icon);
+  border: 0 none;
+  background: transparent;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  margin-right: 0.5rem;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
+  color: var(--primary-icon);
+  border-color: transparent;
+  background: var(--bandeau-text-second);
+}
+
+/**
 
  */
-body {
+.flex-row {
   display: flex;
-  flex-direction: column;
-  height: 90vh;
-  width: 100vw;
-  padding: 1px 30px 1px 30px;
-  /*color: var(--text-color);
-  background-color:silver ;*/
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-basis: 100%;
+  margin: .5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .flex-col {
+    flex: 1;
+  }
+
+  .flex-60p {
+    flex: .60;
+  }
+
+  .flex-50p {
+    flex: .50;
+  }
+
+  .flex-40p {
+    flex: .40;
+  }
+
+  .flex-30p {
+    flex: .30;
+  }
+
+  .flex-25p {
+    flex: .25;
+  }
+
+  .flex-20p {
+    flex: .20;
+  }
 }
 
 /**

@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment.prod';
 import {ButtonModule} from 'primeng/button';
+import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {PanelModule} from 'primeng/panel';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MaterialModule} from './app-material.module';
@@ -35,6 +36,7 @@ import {MaterialModule} from './app-material.module';
     PanelModule,
     MaterialModule,
     NgbModule,
+    DynamicDialogModule,
     StoreDevtoolsModule.instrument({
       maxAge: 12, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
@@ -42,7 +44,7 @@ import {MaterialModule} from './app-material.module';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {
 }

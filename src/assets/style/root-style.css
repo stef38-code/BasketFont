@@ -1,5 +1,7 @@
 :root {
   --primary-icon: #D34E4E;
+  --bandeau-primary: #2C97BD;
+  --bandeau-text-second: #c6c6cc;
   --secondary: #2C97BD;
   --accent: #384b5e;
   --warn: #D34E4E;
@@ -9,4 +11,12 @@
   --header-height: 60px;
   /* Footer */
   --footer-height: 20px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 100vw;
+  padding: 1px 30px 1px 30px;
 }
