@@ -1,18 +1,21 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Joueur} from '../../../share/dto';
 import {Observable} from 'rxjs';
 import {JoueursService} from '../../../core/service';
-import {PrimeNGConfig} from 'primeng/api';
+import {MessageService, PrimeNGConfig} from 'primeng/api';
 import {Store} from '@ngrx/store';
 import {JoueursStoreActions, JoueursStoreSelectors, JoueursStoreState} from '../../../share/store/joueur';
 import {Table} from 'primeng/table';
+import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
+import {JoueurEditComponent} from "../joueur-edit/joueur-edit.component";
 
 @Component({
   selector: 'app-joueur-liste',
   templateUrl: './joueur-liste.component.html',
   styleUrls: ['./joueur-liste.component.scss']
 })
-export class JoueurListeComponent implements OnInit {
+export class JoueurListeComponent implements OnInit, OnDestroy {
+  ref: DynamicDialogRef;
 
   myFeatureItems$: Observable<Joueur[]>;
   error$: Observable<string>;
@@ -25,17 +28,22 @@ export class JoueurListeComponent implements OnInit {
   selectedCustomers: any;
 
   constructor(
-    private customerService: JoueursService, private primengConfig: PrimeNGConfig,
-    private store$: Store<JoueursStoreState.State>
+    private customerService: JoueursService,
+    private primengConfig: PrimeNGConfig,
+    private store$: Store<JoueursStoreState.State>,
+    public dialogService: DialogService,
+    public messageService: MessageService
   ) {
     this.primengConfig.ripple = true;
   }
 
   ngOnInit(): void {
     this.cols = [
-      { field: 'id', header: 'Id' },
-      { field: 'nom', header: 'Nom' },
-      { field: 'prenom', header: 'Prenom' },
+      {field: 'id', header: 'Id'},
+      {field: 'nom', header: 'Nom'},
+      {field: 'prenom', header: 'Prenom'},
+      {field: 'sexe', header: 'Sexe'},
+      {field: 'dnaissance', header: 'Date naissance'},
     ];
     this.myFeatureItems$ = this.store$.select(
       JoueursStoreSelectors.selectAll
@@ -59,6 +67,18 @@ export class JoueurListeComponent implements OnInit {
 
   selectProduct(userElement: any): void {
     console.log(userElement);
+    this.ref = this.dialogService.open(JoueurEditComponent, {
+      header: 'Choose a Product',
+      width: '70%',
+      contentStyle: {'max-height': '500px', overflow: 'auto'},
+      baseZIndex: 10000
+    });
+
+    /*this.ref.onClose.subscribe((product: Product) =>{
+      if (product) {
+        this.messageService.add({severity:'info', summary: 'Product Selected', detail: product.name});
+      }
+    });*/
   }
 
   clear(table: Table): void {
@@ -68,5 +88,11 @@ export class JoueurListeComponent implements OnInit {
 
   find(dt: Table, $event: Event): void {
     dt.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
+  }
+
+  ngOnDestroy(): void {
+    if (this.ref) {
+      this.ref.close();
+    }
   }
 }

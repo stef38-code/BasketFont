@@ -1,0 +1,42 @@
+/**
+Custom icon
+ */
+.pi-list-custom:before {
+  content: "\e967";
+  color: var(--primary-icon);
+}
+
+.pi-trash-custom:before {
+  content: "\e93d";
+  color: var(--primary-icon);
+}
+
+.pi-users-custom:before {
+  content: "\e941";
+  color: var(--primary-icon);
+  margin-right: 0.3em;
+}
+
+.pi-user-custom:before {
+  content: "\e939";
+  color: var(--primary-icon);
+  margin-right: 0.3em;
+}
+
+personnal-icon-basket {
+  content: "\ea26";
+  color: var(--primary-icon);
+  margin-right: 0.3em;
+}
+
+.pi-folder-open-custom:before {
+  content: "\e964";
+  color: var(--primary-icon);
+  margin-right: 0.3em;
+}
+
+.pi-cog-custom:before {
+  content: "\e94a";
+  color: var(--primary-icon);
+  margin-right: 0.3em;
+}

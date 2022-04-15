@@ -17,7 +17,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MaterialModule} from './app-material.module';
 
 
-
 @NgModule({
   declarations: [
     AppComponent

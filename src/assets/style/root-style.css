@@ -1,0 +1,12 @@
+:root {
+  --primary-icon: #D34E4E;
+  --secondary: #2C97BD;
+  --accent: #384b5e;
+  --warn: #D34E4E;
+  --margin-button-icon: 0 0.3em;
+  --grid-default-gap: 2em;
+  /*header*/
+  --header-height: 60px;
+  /* Footer */
+  --footer-height: 20px;
+}

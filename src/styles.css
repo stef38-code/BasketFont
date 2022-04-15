@@ -5,6 +5,11 @@
 @import '~primeicons/primeicons.css';
 @import '~primeflex/primeflex.css';
 @import '~quill/dist/quill.snow.css';
+/**
+Personnal style
+ */
+@import './assets/style/icon-custom.css';
+@import './assets/style/root-style.css';
 
 .mat-toolbar{
   background-color: #2C97BD ;
@@ -12,57 +17,29 @@
 .mat-nav-list{
   background-color: #2C97BD ;
 }
+
 .mat-list-base .mat-list-item {
   color: #f0f1f3;
 }
-.mat-toolbar-row a{
+
+.mat-toolbar-row a {
   color: #f0f1f3;
 }
-/**
-Custom icon
+
+/*
+
  */
-.pi-list-custom:before {
-  content: "\e967";
-  color: var(--primary-icon);
+body {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 100vw;
+  padding: 1px 30px 1px 30px;
+  /*color: var(--text-color);
+  background-color:silver ;*/
 }
 
-.pi-trash-custom:before {
-  content: "\e93d";
-  color: var(--primary-icon);
-}
+/**
 
-.pi-users-custom:before {
-  content: "\e941";
-  color: var(--primary-icon);
-  margin-right: 0.3em;
-}
-.pi-user-custom:before {
-  content: "\e939";
-  color: var(--primary-icon);
-  margin-right: 0.3em;
-}
+ */
 
-personnal-icon-basket {
-  content: "\ea26";
-  color: var(--primary-icon);
-  margin-right: 0.3em;
-}
-
-.pi-folder-open-custom:before {
-  content: "\e964";
-  color: var(--primary-icon);
-  margin-right: 0.3em;
-}
-
-:root {
-  --primary-icon: #D34E4E;
-  --secondary: #2C97BD;
-  --accent: #384b5e;
-  --warn: #D34E4E;
-  --margin-button-icon: 0 0.3em;
-  --grid-default-gap: 2em;
-  /*header*/
-  --header-height: 60px;
-  /* Footer */
-  --footer-height: 20px;
-}
