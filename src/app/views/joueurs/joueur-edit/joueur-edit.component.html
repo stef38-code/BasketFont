@@ -50,28 +50,28 @@
       <li class="flex-row">
         <mat-form-field class="flex-col">
           <mat-label>Nom</mat-label>
-          <input [(ngModel)]="joueur.nom" formControlName="nom" matInput>
+          <input formControlName="nom" matInput>
         </mat-form-field>
       </li>
       <li class="flex-row">
         <mat-form-field class="flex-col">
           <mat-label>Prénom</mat-label>
-          <input [(ngModel)]="joueur.prenom" formControlName="prenom" matInput>
+          <input formControlName="prenom" matInput>
         </mat-form-field>
       </li>
       <li class="flex-row">
         <div class="flex-col">
           <label>Street:</label>
-          <input class="form-control" formControlName="street">
+          <input class="form-control" formControlName="adresse">
         </div>
       </li>
       <li class="flex-row">
         <div class="flex-col">
-          <label>city:</label><input class="form-control" formControlName="city">
+          <label>city:</label><input class="form-control" formControlName="cp">
         </div>
       </li>
       <li class="flex-row">
-        <app-dropdown class="flex-col" formControlName="state" label="State:"></app-dropdown>
+        <app-dropdown class="flex-col" formControlName="ville" label="State:"></app-dropdown>
       </li>
     </ul>
   </form>
