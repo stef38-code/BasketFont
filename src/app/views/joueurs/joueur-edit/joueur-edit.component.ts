@@ -18,9 +18,25 @@ export class JoueurEditComponent implements OnInit {
       id: [],
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
+      dnaissance: ['', Validators.required],
+      sexe: ['', Validators.required],
+      nlicence: ['', Validators.required],
+      catgeorie: ['', Validators.required],
       adresse: ['', Validators.required],
       cp: ['', Validators.required],
-      ville: ['', Validators.required]
+      ville: ['', Validators.required],
+      taille: ['', Validators.required],
+      email: ['', Validators.required],
+      portable: ['', Validators.required],
+      domicile: ['', Validators.required],
+      pro: ['', Validators.required],
+      telmeremineur: ['', Validators.required],
+      emailmeremineur: ['', Validators.required],
+      telperemineur: ['', Validators.required],
+      emailperemineur: ['', Validators.required],
+      FIELD20: ['', Validators.required],
+      FIELD21: ['', Validators.required],
+      FIELD22: ['', Validators.required]
     });
     console.log(this.joueur);
     this.personForm.setValue(this.joueur);

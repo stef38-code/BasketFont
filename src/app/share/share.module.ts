@@ -1,18 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LayoutModule} from './layout';
-import {StoreModule} from '@ngrx/store';
-import {EffectsModule} from '@ngrx/effects';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {LayoutModule} from './layout';
 import {RootStoreModule} from './store/root-store.module';
+import {ComponentsModule} from './components/components.module';
+
+const SHARE_MODULES = [
+  LayoutModule,
+  RootStoreModule,
+  ComponentsModule,
+];
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    LayoutModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
-    RootStoreModule
-  ]
+    SHARE_MODULES
+  ],
+  exports: SHARE_MODULES,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ShareModule { }

@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Joueur} from '../../share/dto';
 import {Observable, throwError} from 'rxjs';
-import {catchError, retry} from 'rxjs/operators';
+import {catchError, map, retry} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +19,15 @@ export class JoueursService {
   constructor(private http: HttpClient) {
   }
 
-  get(): Observable<Joueur[]> {
+  get(): Observable<Array<Joueur>> {
     return this.http
-      .get<Joueur[]>(this.url)
-      .pipe(retry(1), catchError(this.handleError));
+      .get<Array<Joueur>>(this.url)
+      .pipe(
+        map((response: any) => {
+          return response as Array<Joueur>;
+        }),
+        retry(1),
+        catchError(this.handleError));
   }
 
   handleError(error: any): Observable<any> {

@@ -16,6 +16,8 @@ import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {PanelModule} from 'primeng/panel';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MaterialModule} from './app-material.module';
+import {EffectsModule} from '@ngrx/effects';
+import {StoreModule} from '@ngrx/store';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import {MaterialModule} from './app-material.module';
     MaterialModule,
     NgbModule,
     DynamicDialogModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 12, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

@@ -1,0 +1,22 @@
+<form [formGroup]="inputFormGroup">
+  <div class="flex-row">
+    <mat-form-field class="flex-col">
+      <mat-label>Nom</mat-label>
+      <input formControlName="nom" matInput>
+    </mat-form-field>
+    <mat-form-field class="flex-col">
+      <mat-label>Prénom</mat-label>
+      <input formControlName="prenom" matInput>
+    </mat-form-field>
+  </div>
+  <div class="flex-row">
+    <mat-form-field class="flex-col">
+      <mat-label>Date de naissance</mat-label>
+      <input formControlName="dnaissance" matInput>
+    </mat-form-field>
+    <mat-form-field class="flex-col">
+      <mat-label>Sexe</mat-label>
+      <input formControlName="sexe" matInput>
+    </mat-form-field>
+  </div>
+</form>

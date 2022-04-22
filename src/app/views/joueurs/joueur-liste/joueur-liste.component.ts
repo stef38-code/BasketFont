@@ -16,6 +16,7 @@ import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
   providers: [DialogService, MessageService]
 })
 export class JoueurListeComponent implements OnInit, OnDestroy {
+
   ref: DynamicDialogRef;
 
   myFeatureItems$: Observable<Joueur[]>;
@@ -67,7 +68,7 @@ export class JoueurListeComponent implements OnInit, OnDestroy {
   }
 
   selectProduct(userElement: Joueur): void {
-    console.log(userElement);
+    /*console.log(userElement);*/
     this.ref = this.dialogService.open(JoueurEditComponent, {
       header: 'Edite une personne',
       width: '50%',

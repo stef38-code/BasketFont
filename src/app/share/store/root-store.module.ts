@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {EffectsModule} from '@ngrx/effects';
 import {JoueurModule} from './joueur';
 import {StoreModule} from '@ngrx/store';
+import {joueursReducer} from './joueur/reducers';
+import {JoueursStoreEffects} from './joueur/effects';
 
 
 @NgModule({
@@ -10,8 +12,8 @@ import {StoreModule} from '@ngrx/store';
   imports: [
     CommonModule,
     JoueurModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([])
+    StoreModule.forFeature('joueurs', joueursReducer),
+    EffectsModule.forFeature([JoueursStoreEffects]),
   ]
 })
 export class RootStoreModule { }

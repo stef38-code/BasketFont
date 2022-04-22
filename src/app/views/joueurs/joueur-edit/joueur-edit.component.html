@@ -1,78 +1,45 @@
-<!--
-<h5>Civilité</h5>
-<div class="p-formgrid p-grid">
-  <div class="p-field p-col-12 p-md-6">
-    <label for="nom">Nom</label>
-    <input id="nom" type="text" matInput class="inputfield w-full" [(ngModel)]="joueur.nom">
-  </div>
-  <div class="p-field p-col-12 p-md-6">
-    <label for="prenom">Prénom</label>
-    <input id="prenom" type="text" class="inputfield w-full" [(ngModel)]="joueur.prenom">
-  </div>
-  <div class="field p-col-12">
-    <label for="address">Address</label>
-    <textarea id="address" type="text" rows="4" class="inputfield w-full"></textarea>
-  </div>
-  <div class="field col-12 p-md-6">
-    <label for="city">City</label>
-    <input id="city" type="text" class="inputfield w-full">
-  </div>
-  <div class="field col-12 p-md-3">
-    <label for="state">State</label>
-    <select id="state" class="w-full inputfield" style="appearance: auto">
-      <option>Arizona</option>
-      <option>California</option>
-      <option>Florida</option>
-      <option>Ohio</option>
-      <option>Washington</option>
-    </select>
-  </div>
-  <div class="field col-12 p-md-3">
-    <label for="zip">Zip</label>
-    <input id="zip" type="text" class="inputfield w-full">
-  </div>
-</div>
--->
-<form class="example-form">
-  <mat-form-field appearance="fill" class="example-full-width">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="example-full-width">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-  </mat-form-field>
-</form>
 <div class="container">
   <form [formGroup]="personForm">
-    <ul>
-      <li class="flex-row">
-        <mat-form-field class="flex-col">
-          <mat-label>Nom</mat-label>
-          <input formControlName="nom" matInput>
-        </mat-form-field>
-      </li>
-      <li class="flex-row">
-        <mat-form-field class="flex-col">
-          <mat-label>Prénom</mat-label>
-          <input formControlName="prenom" matInput>
-        </mat-form-field>
-      </li>
-      <li class="flex-row">
-        <div class="flex-col">
-          <label>Street:</label>
-          <input class="form-control" formControlName="adresse">
-        </div>
-      </li>
-      <li class="flex-row">
-        <div class="flex-col">
-          <label>city:</label><input class="form-control" formControlName="cp">
-        </div>
-      </li>
-      <li class="flex-row">
-        <app-dropdown class="flex-col" formControlName="ville" label="State:"></app-dropdown>
-      </li>
-    </ul>
+    <app-personne-civilite [inputFormGroup]="personForm"></app-personne-civilite>
+    <div class="flex-row">
+      <mat-form-field class="flex-col">
+        <mat-label>Numéro de licence</mat-label>
+        <input formControlName="nlicence" matInput>
+      </mat-form-field>
+      <mat-form-field class="flex-col">
+        <mat-label>Catégorie</mat-label>
+        <input formControlName="catgeorie" matInput>
+      </mat-form-field>
+    </div>
+    <div class="flex-row">
+      <p-tabView>
+        <p-tabPanel header="Adresse">
+          <mat-form-field class="flex-row">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput>
+          </mat-form-field>
+          <div class="flex-row">
+            <mat-form-field class="flex-col">
+              <mat-label>Tél Portable</mat-label>
+              <input formControlName="portable" matInput>
+            </mat-form-field>
+            <mat-form-field class="flex-col">
+              <mat-label>Tél Domicile</mat-label>
+              <input formControlName="domicile" matInput>
+            </mat-form-field>
+            <mat-form-field class="flex-col">
+              <mat-label>Tél Prof.</mat-label>
+              <input formControlName="pro" matInput>
+            </mat-form-field>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Adresse Père">
+          Content 2
+        </p-tabPanel>
+        <p-tabPanel header="Adresse Mère">
+          Content 3
+        </p-tabPanel>
+      </p-tabView>
+    </div>
   </form>
 </div>
