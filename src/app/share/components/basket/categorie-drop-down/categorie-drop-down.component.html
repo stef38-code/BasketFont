@@ -1,0 +1,11 @@
+<form [formGroup]="inputFormGroup">
+  <mat-form-field class="flex-col">
+    <mat-label>Catégorie
+    </mat-label>
+    <mat-select formControlName="catgeorie">
+      <mat-option *ngFor="let element of categories" [value]="element.id">
+        {{element.categorie}} {{element.libelle}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

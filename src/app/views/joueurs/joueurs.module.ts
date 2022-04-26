@@ -10,21 +10,23 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TabViewModule} from 'primeng/tabview';
 import {AccordionModule} from 'primeng/accordion';
 import {ShareModule} from '../../share/share.module';
+import {BasketModule} from '../../share/components/basket/basket.module';
 
 
 @NgModule({
   declarations: [JoueurListeComponent, JoueurEditComponent],
-  imports: [
-    CommonModule,
-    JoueursRoutingModule,
-    ShareModule,
-    TableModule,
-    MaterialModule,
-    PanelModule,
-    FormsModule,
-    ReactiveFormsModule,
-    TabViewModule,
-    AccordionModule,
-  ]
+    imports: [
+        CommonModule,
+        JoueursRoutingModule,
+        ShareModule,
+        TableModule,
+        MaterialModule,
+        PanelModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TabViewModule,
+        AccordionModule,
+        BasketModule,
+    ]
 })
 export class JoueursModule { }

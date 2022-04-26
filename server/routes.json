@@ -1,4 +1,6 @@
 {
   "/api/joueurs": "/joueurs",
-  "/api/joueurs/:id": "/joueurs/:id"
+  "/api/joueurs/:id": "/joueurs/:id",
+  "/api/categories": "/categories",
+  "/api/categories/:id": "/categories/:id"
 }

@@ -1,5 +1,6 @@
+
 <form [formGroup]="inputFormGroup">
-  <div class="flex-row">
+   <div class="flex-row">
     <mat-form-field class="flex-col">
       <mat-label>Nom</mat-label>
       <input formControlName="nom" matInput>
@@ -13,6 +14,11 @@
     <mat-form-field class="flex-col">
       <mat-label>Date de naissance</mat-label>
       <input formControlName="dnaissance" matInput>
+    </mat-form-field>
+    <mat-form-field class="flex-col">
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker ></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="flex-col">
       <mat-label>Sexe</mat-label>

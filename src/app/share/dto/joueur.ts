@@ -1,11 +1,11 @@
 export interface Joueur {
-  id: number;
+  id?: number;
   nom: string;
   prenom: string;
   dnaissance: string;
   sexe: string;
   nlicence: string;
-  catgeorie: string;
+  catgeorie: number;
   adresse: string;
   cp: string;
   ville: string;

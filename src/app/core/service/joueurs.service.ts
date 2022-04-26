@@ -26,7 +26,7 @@ export class JoueursService {
         map((response: any) => {
           return response as Array<Joueur>;
         }),
-        retry(1),
+
         catchError(this.handleError));
   }
 

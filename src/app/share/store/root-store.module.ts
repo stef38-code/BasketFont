@@ -4,7 +4,9 @@ import {EffectsModule} from '@ngrx/effects';
 import {JoueurModule} from './joueur';
 import {StoreModule} from '@ngrx/store';
 import {joueursReducer} from './joueur/reducers';
+import {categoriesReducer} from './categorie/reducers';
 import {JoueursStoreEffects} from './joueur/effects';
+import {CategoriesStoreEffects} from './categorie/effects';
 
 
 @NgModule({
@@ -13,7 +15,8 @@ import {JoueursStoreEffects} from './joueur/effects';
     CommonModule,
     JoueurModule,
     StoreModule.forFeature('joueurs', joueursReducer),
-    EffectsModule.forFeature([JoueursStoreEffects]),
+    StoreModule.forFeature('categories', categoriesReducer),
+    EffectsModule.forFeature([JoueursStoreEffects, CategoriesStoreEffects]),
   ]
 })
 export class RootStoreModule { }

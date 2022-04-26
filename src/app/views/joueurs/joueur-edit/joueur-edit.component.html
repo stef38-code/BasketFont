@@ -1,6 +1,6 @@
 <div class="container">
   <form [formGroup]="personForm">
-    <app-personne-civilite [inputFormGroup]="personForm"></app-personne-civilite>
+    <app-personne-civilite [formGroup]="personForm"></app-personne-civilite>
     <div class="flex-row">
       <mat-form-field class="flex-col">
         <mat-label>Numéro de licence</mat-label>
@@ -10,6 +10,7 @@
         <mat-label>Catégorie</mat-label>
         <input formControlName="catgeorie" matInput>
       </mat-form-field>
+      <app-categorie-drop-down [inputFormGroup]="personForm"></app-categorie-drop-down>
     </div>
     <div class="flex-row">
       <p-tabView>

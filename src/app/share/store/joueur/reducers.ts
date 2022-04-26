@@ -3,6 +3,12 @@ import { featureAdapter, initialState, State } from './state';
 
 export function joueursReducer(state = initialState, action: Actions): State {
   switch (action.type) {
+    case ActionTypes.SELECT_ID_REQUEST: {
+      return {
+        ...state,
+        selectedUserId: action.payload
+      };
+    }
     case ActionTypes.LOAD_REQUEST: {
       return {
         ...state,

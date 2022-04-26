@@ -4,7 +4,7 @@ import {A11yModule} from '@angular/cdk/a11y';
 import {BidiModule} from '@angular/cdk/bidi';
 import {ObserversModule} from '@angular/cdk/observers';
 import {PortalModule} from '@angular/cdk/portal';
-import {MatCommonModule, MatRippleModule} from '@angular/material/core';
+import {MAT_DATE_FORMATS, MatCommonModule, MatRippleModule, MatNativeDateModule} from '@angular/material/core';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -34,6 +34,17 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
 
+export const MY_DATE_FORMATS = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY'
+  },
+};
 const MATERIAL_MODULES = [
   MatAutocompleteModule,
   MatButtonModule,
@@ -69,14 +80,17 @@ const MATERIAL_MODULES = [
   BidiModule,
   A11yModule,
   MatCommonModule,
-  ObserversModule
+  ObserversModule,
+  MatNativeDateModule
 ];
 
 @NgModule({
-  imports: MATERIAL_MODULES,
+  imports: [...MATERIAL_MODULES],
   declarations: [],
-  exports: MATERIAL_MODULES,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [...MATERIAL_MODULES],
+  providers: [
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }
+  ]
 })
 export class MaterialModule {
 }

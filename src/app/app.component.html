@@ -6,6 +6,10 @@
       </button>
       <span class="menu-spacer"></span>
       <div fxShow="true" fxHide.lt-md>
+        <a routerLink="/personnes" mat-button>
+          <mat-icon><i class="pi pi-user-custom" ></i></mat-icon>
+          Personnes
+        </a>
         <a routerLink="/joueurs" mat-button>
           <mat-icon><i class="pi pi-user-custom" ></i></mat-icon>
           Joueurs
@@ -24,6 +28,10 @@
     <mat-sidenav #sidenav>
       <mat-nav-list>
         <!--<a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>-->
+        <a routerLink="/personnes" mat-list-item>
+          <i class="pi pi-users-custom" ></i>
+          Personnes
+        </a>
         <a routerLink="/joueurs" mat-list-item>
           <i class="pi pi-users-custom" ></i>
           Joueurs

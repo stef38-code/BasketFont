@@ -18,7 +18,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MaterialModule} from './app-material.module';
 import {EffectsModule} from '@ngrx/effects';
 import {StoreModule} from '@ngrx/store';
-
+/*import { DropdownModule } from 'primeng/dropdown';*/
+import {PrimeNgModule} from './app-primeng.module';
 
 @NgModule({
   declarations: [
@@ -29,16 +30,18 @@ import {StoreModule} from '@ngrx/store';
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
-    ShareModule,
     CoreModule,
     LayoutModule,
     HomeModule,
     BrowserAnimationsModule,
     ButtonModule,
+/*    DropdownModule,*/
     PanelModule,
     MaterialModule,
+    PrimeNgModule,
     NgbModule,
     DynamicDialogModule,
+    ShareModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({

@@ -14,9 +14,10 @@ const SHARE_MODULES = [
   declarations: [],
   imports: [
     CommonModule,
-    SHARE_MODULES
+    ...SHARE_MODULES
   ],
-  exports: SHARE_MODULES,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [...SHARE_MODULES]
+/*  ,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],*/
 })
 export class ShareModule { }

@@ -9,12 +9,14 @@ export const featureAdapter: EntityAdapter<Joueur> = createEntityAdapter<Joueur>
 });
 
 export interface State extends EntityState<Joueur> {
+  selectedUserId: number | null;
   isLoading?: boolean;
   error?: any;
 }
 
 export const initialState: State = featureAdapter.getInitialState(
   {
+    selectedUserId: null,
     isLoading: false,
     error: null
   }
