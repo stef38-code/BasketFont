@@ -16,7 +16,9 @@
       <input formControlName="dnaissance" matInput>
     </mat-form-field>
     <mat-form-field class="flex-col">
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-label>Date de naissance</mat-label>
+     <!-- <input matInput [matDatepicker]="picker" name="dnaissance" formControlName="dnaissance">-->
+      <input matInput [matDatepicker]="picker" formControlName="dnaissance">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker ></mat-datepicker>
     </mat-form-field>

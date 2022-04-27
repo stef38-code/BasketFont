@@ -24,7 +24,7 @@ export class CategoriesStoreEffects {
           map(
             items  =>
             {
-              console.log("reponse", items);
+              /*console.log("reponse", items);*/
               return new featureActions.LoadSuccessAction({items} );
             }
           ),

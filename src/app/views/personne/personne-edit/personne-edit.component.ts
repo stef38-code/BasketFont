@@ -50,7 +50,7 @@ export class PersonneEditComponent implements OnInit, OnDestroy {
       id: [],
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
-      dnaissance: ['', Validators.required],
+      dnaissance: [''],
       sexe: ['', Validators.required],
       nlicence: ['', Validators.required],
       catgeorie: ['', Validators.required],

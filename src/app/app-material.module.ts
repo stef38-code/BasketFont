@@ -4,7 +4,7 @@ import {A11yModule} from '@angular/cdk/a11y';
 import {BidiModule} from '@angular/cdk/bidi';
 import {ObserversModule} from '@angular/cdk/observers';
 import {PortalModule} from '@angular/cdk/portal';
-import {MAT_DATE_FORMATS, MatCommonModule, MatRippleModule, MatNativeDateModule} from '@angular/material/core';
+import {MAT_DATE_FORMATS, MatCommonModule, MatRippleModule, MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -89,6 +89,7 @@ const MATERIAL_MODULES = [
   declarations: [],
   exports: [...MATERIAL_MODULES],
   providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'fr-FR' },
     { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }
   ]
 })
