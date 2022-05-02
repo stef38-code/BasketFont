@@ -1,6 +1,7 @@
 
 # BasketFont
 https://stackblitz.com/github/jbojcic1/angular-routing-example/tree/routing-reuse-layout-example-3-with-subscribing-to-route-events
+https://blog.dcube.fr/index.php/2020/12/08/angular-generic-http-api-service-interceptor-et-mise-en-cache/
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.3.
 
 ## Development server

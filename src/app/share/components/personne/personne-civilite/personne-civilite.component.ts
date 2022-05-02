@@ -16,7 +16,8 @@ export class PersonneCiviliteComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('inputFormGroup:', this.inputFormGroup);
-    console.log('dnaissance:', this.inputFormGroup.get('dnaissance'));
+    console.log('dnaissance:', this.inputFormGroup.get('dnaissance').value);
+    console.log('dnaissance:', typeof this.inputFormGroup.get('dnaissance'));
     this.date1 = this.inputFormGroup.get('dnaissance') as FormControl;
     console.log('date1', this.date1);
     this.date1.setValue(new Date('31/12/2021'));

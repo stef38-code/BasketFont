@@ -4,11 +4,13 @@ import {Store} from '@ngrx/store';
 import {JoueursStoreSelectors, JoueursStoreState} from '../../../share/store/joueur';
 import {Observable, Subscription} from 'rxjs';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-personne-edit',
   templateUrl: './personne-edit.component.html',
-  styleUrls: ['./personne-edit.component.css']
+  styleUrls: ['./personne-edit.component.css'],
+  providers: [DatePipe],
 })
 export class PersonneEditComponent implements OnInit, OnDestroy {
   joueurObservable$: Observable<Joueur>;
@@ -41,11 +43,15 @@ export class PersonneEditComponent implements OnInit, OnDestroy {
   id: number | null;
 
   public personForm: FormGroup;
+  public personForm2: FormGroup;
   private subJoueur: Subscription;
   private subId: Subscription;
 
   constructor(private store$: Store<JoueursStoreState.State>,
-              private fb: FormBuilder) {
+              private fb: FormBuilder, public datepipe: DatePipe) {
+    this.personForm2 = this.fb.group({
+      dnaissance: [''],
+    });
     this.personForm = this.fb.group({
       id: [],
       nom: ['', Validators.required],
@@ -79,6 +85,8 @@ export class PersonneEditComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
+    /*this.personForm2.patchValue({dnaissance: this.datepipe.transform(new Date, 'dd/MM/yyyy')});*/
+    this.personForm2.patchValue({dnaissance: '21/02/2014'});
 
     this.subId = this.idObservable$.subscribe(
       id => {
@@ -90,8 +98,14 @@ export class PersonneEditComponent implements OnInit, OnDestroy {
     );
     this.subJoueur = this.joueurObservable$.subscribe(joueur => {
       this.joueur = joueur;
+      /*this.joueur.dnaissance = this.datepipe.transform(new Date(), 'dd/MM/yyyy');
+      this.personForm.patchValue({dnaissance: this.datepipe.transform(new Date(), 'dd/MM/yyyy')});
+      console.log("uuuu", this.datepipe.transform(new Date(this.joueur.dnaissance)));
+      this.personForm2.patchValue({dnaissance: this.datepipe.transform(new Date(this.joueur.dnaissance))});*/
       if (this.id) {
         this.personForm.setValue(this.joueur);
+        console.log('this.joueur.dnaissance', this.joueur.dnaissance);
+        console.log('this.joueur.dnaissance', this.joueur);
       }
     });
   }

@@ -25,7 +25,6 @@ export class JoueursStoreEffects {
           map(
             items  =>
             {
-              /*console.log("reponse", items);*/
               return new featureActions.LoadSuccessAction({items} );
             }
           ),

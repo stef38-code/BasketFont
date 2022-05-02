@@ -1,7 +1,7 @@
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PersonneCiviliteComponent} from './personne-civilite/personne-civilite.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../../../app-material.module';
 
 
@@ -10,7 +10,8 @@ import {MaterialModule} from '../../../app-material.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   exports: [
     PersonneCiviliteComponent

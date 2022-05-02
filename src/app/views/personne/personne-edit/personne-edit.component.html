@@ -1,6 +1,10 @@
 <div class="container">
   <form [formGroup]="personForm">
     <app-personne-civilite [inputFormGroup]="personForm"></app-personne-civilite>
+    <!--<div [formGroup]="personForm2">
+      <input formControlName="dnaissance">
+      <input [(ngModel)]="personForm" [ngModelOptions]="{standalone: true}">
+    </div>-->
     <div class="flex-row">
       <mat-form-field class="flex-col">
         <mat-label>Numéro de licence</mat-label>
