@@ -12,13 +12,14 @@
   </div>
 
   <div class="flex-row">
-    <div [formGroup]="inputFormGroup">
+<!--    <div [formGroup]="inputFormGroup">
       <input formControlName="dnaissance">
       <input [(ngModel)]="inputFormGroup" [ngModelOptions]="{standalone: true}">
-    </div>
+    </div>-->
     <mat-form-field class="flex-col">
       <mat-label>Date de naissance</mat-label>
-      <input formControlName="dnaissance" matInput>
+      <input formControlName="dnaissance" matInput name="dnaissance">
+      <div *ngIf="!pwConfirmModel.valid">{{pwConfirmModel.errors| json}}</div>
     </mat-form-field>
     <!--<mat-form-field class="flex-col">
       <mat-label>Date de naissance</mat-label>

@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {FormControl, FormGroup, NgModel} from '@angular/forms';
 
 @Component({
   selector: 'app-personne-civilite',
@@ -9,7 +9,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class PersonneCiviliteComponent implements OnInit {
   @Input() inputFormGroup: FormGroup;
   date1: FormControl;
-
+  @ViewChild('pwConfirmModel') pwConfirmModel: NgModel;
   constructor() {
 
   }

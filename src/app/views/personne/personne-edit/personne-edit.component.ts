@@ -108,6 +108,11 @@ export class PersonneEditComponent implements OnInit, OnDestroy {
         console.log('this.joueur.dnaissance', this.joueur);
       }
     });
+    const person = {
+      id: 1,
+      dnaissance: "T11:31:34.598Z"
+    } as Joueur;
+    console.log('essaie', JSON.stringify(person));
   }
 
   ngOnDestroy(): void {
