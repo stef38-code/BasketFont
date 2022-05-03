@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Joueur} from '../../share/dto';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map, retry} from 'rxjs/operators';
+import {TransformDate} from '../tools';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class JoueursService {
 
   constructor(private http: HttpClient) {
   }
-
+  @TransformDate
   get(): Observable<Array<Joueur>> {
     return this.http
       .get<Array<Joueur>>(this.url)

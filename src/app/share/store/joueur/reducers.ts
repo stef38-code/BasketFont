@@ -17,6 +17,8 @@ export function joueursReducer(state = initialState, action: Actions): State {
       };
     }
     case ActionTypes.LOAD_SUCCESS: {
+      console.log('----------------',action.payload);
+      console.log('----------------',action.payload.items);
       return featureAdapter.addAll(action.payload.items, {
         ...state,
         isLoading: false,
